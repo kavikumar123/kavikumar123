@@ -1,0 +1,25 @@
+program 6
+#include <iostream.h>
+#include <conio.h>
+class Base {
+   public:
+    virtual void print() {
+        cout << "Base Function" << endl; 
+    }
+};
+class Derived : public Base {
+   public:
+    void print() {
+        cout << "Derived Function" << endl;
+    }
+};
+int main() {
+    clrscr();
+    Derived derived1;
+    // pointer of Base type that points to derived1
+    Base* base1 = &derived1;
+    // calls member function of Derived class
+    base1->print();
+    getch();
+    return 0;
+}
