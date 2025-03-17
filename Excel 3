@@ -1,0 +1,121 @@
+*PROGRAM 3* 
+
+#include <iostream>  
+#include <conio.h>
+
+// Base class for single inheritance
+class Base {
+public:
+void displayBase() {
+cout << "This is the Base class.\n";
+ }
+};
+
+// Derived class for single inheritance
+class DerivedSingle : public Base {
+public:
+void displayDerivedSingle() {
+cout << "This is the DerivedSingle class using single inheritance.\n";
+  }
+};
+
+// Class A for multiple inheritance
+class A {
+public:
+void displayA() {
+cout << "This is class A.\n";
+ }
+};
+
+// Class B for multiple inheritance
+class B {
+public:
+void displayB() {
+cout << "This is class B.\n";
+  }
+};
+
+// Derived class for multiple inheritance
+class DerivedMultiple : public A, public B {
+public:
+void displayDerivedMultiple() {
+cout << "This is the DerivedMultiple class using multiple inheritance.\n";
+  }
+};
+
+// Base class for multilevel inheritance
+class GrandParent {
+public:
+void displayGrandParent() {
+cout << "This is the GrandParent class.\n";
+ }   
+};
+
+// Intermediate class for multilevel inheritance
+class Parent : public GrandParent {
+public:
+void displayParent() {
+cout << "This is the Parent class.\n";
+ }
+};
+
+// Derived class for multilevel inheritance
+class Child : public Parent {
+public:
+void displayChild() {
+cout << "This is the Child class using multilevel inheritance.\n";
+ }
+};
+
+// Base class for hierarchical inheritance
+class BaseForHierarchy {
+public:
+void displayBaseForHierarchy() {
+cout << "This is the BaseForHierarchy class.\n";
+   }
+};
+
+// Derived1 class for hierarchical inheritance
+class Derived1 : public BaseForHierarchy {
+public:
+void displayDerived1() {
+cout << "This is the Derived1 class using hierarchical inheritance.\n";
+  }
+};
+
+// Derived2 class for hierarchical inheritance
+class Derived2 : public BaseForHierarchy {
+public:
+void displayDerived2() {
+cout << "This is the Derived2 class using hierarchical inheritance.\n";
+  }
+};
+
+int main() {
+    // Single inheritance
+    DerivedSingle ds;
+    ds.displayBase();
+    ds.displayDerivedSingle();
+
+    // Multiple inheritance
+    DerivedMultiple dm;
+    dm.displayA();
+    dm.displayB();
+    dm.displayDerivedMultiple();
+
+    // Multilevel inheritance
+    Child child;
+    child.displayGrandParent();
+    child.displayParent();
+    child.displayChild();
+
+    // Hierarchical inheritance
+    Derived1 d1;
+    Derived2 d2;
+    d1.displayBaseForHierarchy();
+    d1.displayDerived1();
+    d2.displayBaseForHierarchy();
+    d2.displayDerived2();
+    getch();
+    return 0;
+}
