@@ -1,0 +1,5 @@
+program 1
+(General)
+Sub message ()
+MsgBox “Welcome to SKASC”
+End Sub
